@@ -4,30 +4,36 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class CategoriaSeeder extends Seeder
 {
-    public function run()
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
     {
-        DB::table('categorias')->insert([
-            [
-                'nombre' => 'Tecnología',
-                'descripcion' => 'Productos electrónicos y gadgets.',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'nombre' => 'Accesorios',
-                'descripcion' => 'Complementos y periféricos para dispositivos.',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-            [
-                'nombre' => 'Hogar',
-                'descripcion' => 'Electrodomésticos y artículos para el hogar.',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ]
-        ]);
+        if (Schema::hasTable('categorias')) {
+            DB::table('categorias')->insert([
+                [
+                    'nombre' => 'Tecnología',
+                    'descripcion' => 'Categoría relacionada con tecnología y avances digitales.',
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ],
+                [
+                    'nombre' => 'Salud',
+                    'descripcion' => 'Categoría enfocada en bienestar, salud y medicina.',
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ],
+                [
+                    'nombre' => 'Negocios',
+                    'descripcion' => 'Categoría sobre economía, finanzas y emprendimiento.',
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ],
+            ]);
+        }
     }
 }

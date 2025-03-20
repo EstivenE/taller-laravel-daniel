@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{str_replace('_','-',app()->getLocale())}}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> @yield('title', 'Taller Laravel')</title>
-
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@yield('title','taller laravel')</title>
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
     <header>
         <nav>
-            <a href="{{ route( 'producto.index') }}">productos</a>
+            <a href="{{route('producto.index') }}">
+                Productos
+            </a>
+          
         </nav>
-    </header>
 
+    </header>
     <main>
         @yield('content')
     </main>

@@ -11,9 +11,17 @@
     <header>
         <nav>
             <a href="{{route('producto.index') }}">
-                Productos
+                {{__('messages.products')}}
             </a>
-          
+            <a href="{{route('categoria.index') }}">
+                {{__('messages.categories')}}
+            </a>
+            <a href="{{route('articulo.index') }}">
+                {{__('messages.articles')}}
+            </a>
+            <a href="{{route('categoriaBlog.index') }}">
+                {{__('messages.blogCategories')}}
+            </a>
         </nav>
 
     </header>

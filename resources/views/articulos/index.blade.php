@@ -10,6 +10,7 @@
             <p>{{ $articulo->categoriaBlog->nombre }}</p>
             <div class="detalles">
                 <a href="{{route('articulo.show',$articulo)}}">Leer</a>
+                @auth
                 <div class="actions">
                     <a href="{{route('articulo.edit',$articulo)}}">
                         <button title="{{__('messages.editArticle')}}">🖋️</button>
@@ -20,6 +21,7 @@
                         <button title="{{__('messages.deleteArticle')}}">🗑️</button>
                     </form>
                 </div>
+                @
             </div>
         </article>
     @empty
